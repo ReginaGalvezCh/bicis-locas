@@ -30,10 +30,11 @@ function validateForm(){
 		if (password.length<=5){
 			return true;
 		}else{ 
-       alert('Sorry pero no puedes usar ni 123456 ni 098754');
-       return false;
+			alert('Sorry pero no puedes usar ni 123456 ni 098754');
+			return false;
+		}
+
+
 	}
 
-
 }
-
