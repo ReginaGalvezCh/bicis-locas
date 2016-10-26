@@ -39,9 +39,10 @@ function validateForm(){
 	if( !(/\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)/.test(mail)) ) {
 		return false;
 	}
-	var elije = document.getElementsByClassName('form-control').value;
-	if( elije == null || elije == 0){
+	var elije = document.querySelector('select').value;
+	if( elije == 0){
 		alert('elije una opcion');
 		return false;
 	}
+	return true;
 }
