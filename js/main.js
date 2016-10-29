@@ -1,14 +1,22 @@
 function validateForm(){
 	
-	var name = document.getElementById("name").value;
-	if( name == null || name.length == 0|| /^\s+$/.test(name) ) {
+	var inputname = document.getElementById('name').value;
+	if( inputname == null || inputname.length == 0|| /^\s+$/.test(inputname) ) {
 		alert('Parece que no has ingresado tu nombre');
+		return false;
+	}else if (inputname.charAt(0).toUpperCase() !== inputname.charAt(0)){
+		alert('La primera letra de tu nombre debe de ser mayuscula');
 		return false;
 	}
 	
-	var lastname = document.getElementById('lastname').value;
-	if( lastname == null || lastname.length == 0|| /^\s+$/.test(lastname) ) {
+
+
+	var inputlastname = document.getElementById('lastname').value;
+	if( inputlastname == null || inputlastname.length == 0|| /^\s+$/.test(inputlastname) ) {
 		alert('Parece que no has ingresado tu apellido');
+		return false;
+	}else if(inputlastname.charAt(0).toUpperCase() !== inputlastname.charAt(0)){
+		alert('La primera letra de tu apellido debe de ser mayuscula');
 		return false;
 	}
 
@@ -39,10 +47,18 @@ function validateForm(){
 	if( !(/\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)/.test(mail)) ) {
 		return false;
 	}
-	var elije = document.querySelector('select').value;
-	if( elije == 0){
-		alert('elije una opcion');
+	var qbici = document.querySelector('select').value;
+	if( qbici == null || qbici == 0 ) {
+		alert('Hola elije una bici =)');
 		return false;
 	}
-	return true;
-}
+   return true;
+} 
+
+
+
+
+
+
+
+
