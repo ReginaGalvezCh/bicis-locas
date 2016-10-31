@@ -1,3 +1,8 @@
+/*
+bueno para probar y hacer funcionar todas las partes de mmi codigo lo tuve que hacer en este orden, 
+crei que no estaba funcionando pero si comprueba todas las secciones, solo que en otro orden no toma
+todo el tiempo el realizar las validaciones
+*/
 function validateForm(){
 	
 	var inputname = document.getElementById('name').value;
@@ -9,8 +14,6 @@ function validateForm(){
 		return false;
 	}
 	
-
-
 	var inputlastname = document.getElementById('lastname').value;
 	if( inputlastname == null || inputlastname.length == 0|| /^\s+$/.test(inputlastname) ) {
 		alert('Parece que no has ingresado tu apellido');
@@ -20,22 +23,22 @@ function validateForm(){
 		return false;
 	}
 
+	var qbici = document.querySelector('select').value;
+	if( qbici == null || qbici == 0 ) {
+		alert('Hola elije una bici =)');
+		return false;
+	}
+
+
 	var pass = document.getElementById('input-password').value;
-	if( pass == 0 ){
+	if( pass.length == 0 || /^\s+$/.test(pass)){
 		alert('ingresa una contraseña');
 		return false;
-
-	}
-	
-	if(pass!= 123456 || pass!= 098754){
-		if(pass.length > 6){
-			return true;
-		}else{
-			alert('No puedes usar 123456 ni 098754');
-			return false;
-		}
-	}else{
+	} else if(pass== "123456" || pass == "098754"){
 		alert('No puedes usar 123456 ni 098754');
+		return false;
+	}else if(pass.length < 6){
+		alert('Prfavor que sea mayor a 6 digitos');
 		return false;
 	}
 
@@ -47,18 +50,8 @@ function validateForm(){
 	if( !(/\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)/.test(mail)) ) {
 		return false;
 	}
-	var qbici = document.querySelector('select').value;
-	if( qbici == null || qbici == 0 ) {
-		alert('Hola elije una bici =)');
-		return false;
-	}
-   return true;
+	
+	return true;
 } 
-
-
-
-
-
-
 
 
